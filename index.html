@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>char List 2021</title>
+
+	<link rel="stylesheet" href="main.css" />
+</head>
+<body>
+	
+	<header>
+		<h1>Initiative</h1>
+		<form id="new-char-form">
+			<input 
+				type="text" 
+				name="new-char-input" 
+				id="new-char-input" 
+				placeholder="Name" />
+			<input 
+				type="text" 
+				name="new-roll-input" 
+				id="new-roll-input" 
+				placeholder="Roll" />
+			<input 
+				type="submit"
+				id="new-char-submit" 
+				value="Add char" />
+		</form>
+	</header>
+	<main>
+		<section class="char-list">
+			<div id="copy">
+			</div>
+			<button type="button" 
+			id="new-char-submit" 
+			value="Add char"onclick="copyEvent('copy')">Copy</button>
+			<h2>chars</h2>
+			<ol id="chars">
+
+				<!-- <div class="char">
+					<div class="content">
+						<input 
+							type="text" 
+							class="text" 
+							value="A new char"
+							readonly>
+					</div>
+					<div class="actions">
+						<button class="delete">Delete</button>
+					</div>
+				</div> -->
+
+			</ol>
+		</section>
+	</main>
+	<script>
+		function copyEvent(id)
+		{
+			var str = document.getElementById(id);
+			window.getSelection().selectAllChildren(str);
+			document.execCommand("Copy")
+		}
+	</script>
+	<script src="main.js"></script>
+</body>
+</html>
