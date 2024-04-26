@@ -28,7 +28,7 @@ function renderList(list){
 				copy = "";
 				copylist.innerHTML = "";
 			}
-			localStorage.setItem("list", JSON.stringify(list));
+			window.localStorage.setItem("list", JSON.stringify(list));
 		});
 	})
 	copylist.innerHTML = copy;
@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
 	const charinput = document.querySelector("#new-char-input");
 	const rollinput = document.querySelector("#new-roll-input");
 	const list_el = document.querySelector("#chars");
-	const list = JSON.parse(localStorage.getItem('list')) || [];
+	const list = JSON.parse(window.localStorage.getItem('list')) || [];
 	renderList(list);
 
 	form.addEventListener('submit', (e) => {
@@ -55,7 +55,7 @@ window.addEventListener('load', () => {
 			renderList(list);
 			rollinput.value = '';
 			charinput.value = '';
-			localStorage.setItem("list", JSON.stringify(list));
+			window.localStorage.setItem("list", JSON.stringify(list));
 	 	}
 	});
 });
