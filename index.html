@@ -1,59 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>char List 2021</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiative</title>
 	<link rel="stylesheet" href="main.css" />
 </head>
 <body>
-	
-	<header>
-		<h1>Initiative</h1>
-		<form id="new-char-form">
-			<input 
-				type="text" 
-				name="new-char-input" 
-				id="new-char-input" 
-				placeholder="Name" />
-			<input 
-				type="text" 
-				name="new-roll-input" 
-				id="new-roll-input" 
-				placeholder="Roll" />
-			<input 
-				type="submit"
-				id="new-char-submit" 
-				value="Add char" />
-		</form>
-	</header>
-	<main>
-		<section class="char-list">
-			<div id="copy">
+    <header>
+        <h1 id="title">Initiative Tracker</h1>
+    </header>
+    <main>
+		<form id="input-form">
+            <label for="name">Name: <input class="input" required ="text" id="name" name="name"></label>
+            <label for="roll">Roll: <input class="input" required type="number" id="roll" name="roll"></label>
+            <input class="btn" type="submit" id="add-char" value="Add Char">
+        </form>
+		<div id="copy-container">
+			<div id="copy-list">
 			</div>
-			<button type="button" 
-			id="new-char-submit" 
-			value="Add char"onclick="copyEvent('copy')">Copy</button>
-			<h2>chars</h2>
-			<ol id="chars">
-
-				<!-- <div class="char">
-					<div class="content">
-						<input 
-							type="text" 
-							class="text" 
-							value="A new char"
-							readonly>
-					</div>
-					<div class="actions">
-						<button class="delete">Delete</button>
-					</div>
-				</div> -->
-
-			</ol>
-		</section>
+			<button class="btn" type="button" 
+			id="copy-btn" 
+			value="Copy List" onclick="copyEvent('copy-list')">Copy</button>
+		</div>
+		<div id="char-container">
+			<h2>Characters</h2>
+			<button class="btn" type="button" id="clear-btn">Clear List</button>
+			<div id="char-list"></div>
+		</div>
 	</main>
 	<script>
 		function copyEvent(id)
