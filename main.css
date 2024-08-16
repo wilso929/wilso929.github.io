@@ -8,6 +8,7 @@
 
 html {
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -16,17 +17,27 @@ body {
     margin:0 auto;
     height: 100%;
     font-size: large;
+    display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+    height: auto;
+    min-width: fit-content;
+    width: 100%;
 }
 
 header{
     margin:0 auto;
     max-width: fit-content;
+    
 }
 
 main {
     margin:0 auto;
     height: 100%;
-    max-width: 50%;
+    width: fit-content;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-self: center;
 }
 
 form {
@@ -107,7 +118,7 @@ label {
 }
 
 #add-char{
-    margin-top: 4.5%;
+    margin-top: 4%;
 }
 
 #copy-container {
@@ -115,16 +126,22 @@ label {
    flex-direction: column;
    flex-wrap: wrap;
    row-gap: 10px;
+   margin-top: 2%;
+   width: auto;
+   max-width: 80%;
 }
 
 #copy-list {
     background-color:black;
     border-style: solid;
     border-color: white;
+    padding-right: 2%;
 }
 
 #char-list {
     margin-top: 2%;
+    min-width: 100vh;
+    width: fit-content;
     
 }
 
@@ -138,6 +155,7 @@ label {
     background-color: black;
     font-size: x-large;
     margin-top: 2%;
+    min-width: 100%;
 }
 
 .char > button {
