@@ -16,7 +16,7 @@ const addOrUpdateCharList = () => {
         id: `${charName.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
         name: charName.value,
         roll: charRoll.value,
-        status: []
+        status: [],
     };
 
     if (dataArrIndex === -1) {
@@ -57,7 +57,7 @@ const fillStatusList = () => {
 const updateCharContainer = () => {
     charList.innerHTML = "";
     charData.forEach(
-      ({ id, name, roll }) => {
+      ({ id, name, roll}) => {
           (charList.innerHTML += `
           <div class="char" id="${id}">
             <p><strong>Name:</strong> ${name}</p>
@@ -84,6 +84,7 @@ const updateCharContainer = () => {
             <button class="status-btn" onclick="select(this)" type="button">Add Status</button>
             <div class="status-list"></div>
             </div>
+            <input class="damage-input" type="number" id="damage-${id}">
             <button class="btn" onclick="deleteChar(this)" type="button" class="btn">Delete</button> 
           </div>
         `)
