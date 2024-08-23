@@ -7,21 +7,20 @@
 }
 
 html {
-    height: 100%;
+    height: 1000000%;
     width: 100%;
+    margin:0px;
 }
 
 body {
     color: white;
     background-color: rgb(40, 44, 53);
     margin:0 auto;
-    height: 100%;
     font-size: large;
     display: flex;
 	flex-direction: column;
 	min-height: 100%;
     height: 100%;
-    min-width: 100%;
     width: 100%;
 }
 
@@ -34,7 +33,7 @@ header{
 main {
     margin:0 auto;
     height: 100%;
-    width: fit-content;
+    width: 70%;
     margin-left: 5%;
     margin-right: 5%;
     align-self: center;
@@ -64,30 +63,27 @@ label {
 }
 
 .damage-input {
-    width: 5%;
     height: 8%;
     background-color: black;
     color: white;
     font-size: small;
     border-radius: 1 rem;
-    margin-top: auto;
-    margin-bottom: auto;
     font-size: larger;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    width: 15vh;
 }
 
 
 .status-container {
     display: flex;
     flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
     margin-top: auto;
-    margin-bottom: auto;
-    width: 45%;
     height: 10%;
     gap: 3%;
-    max-width:  45%;
     max-height: 10%;
+    width: fit-content;
 }
 
 .btn, .status {
@@ -109,11 +105,12 @@ label {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 50%;
-    min-width: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
     gap: 3%;
     font-size: small;
     overflow-y:scroll;
+    width: 40%;
 }
 
 .status-card {
@@ -137,7 +134,7 @@ label {
 }
 
 #add-char{
-    margin-top:3%;
+    margin-top: auto;
     margin-bottom: auto;
 }
 
@@ -161,16 +158,16 @@ label {
 #char-list {
     margin-top: 2%;
     width: 100%;
-    max-width: 100%;
     height: auto;
     
 }
 
 .char{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    gap: 5%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    gap: 5vh;
     border-style: solid;
     border-color: white;
     background-color: black;
@@ -178,12 +175,12 @@ label {
     margin-top: 2%;
     width: 100%;
     padding: 1%;
+    overflow-x: scroll;
 }
 
 .char > button {
     margin-top: auto;
     margin-bottom: auto;
-    float: right;
     margin-left: auto;
     margin-right: auto;
 }
