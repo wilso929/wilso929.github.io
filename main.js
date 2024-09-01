@@ -17,6 +17,7 @@ const addOrUpdateCharList = () => {
         name: charName.value,
         roll: charRoll.value,
         status: [],
+        damage: 0
     };
 
     if (dataArrIndex === -1) {
@@ -57,7 +58,7 @@ const fillStatusList = () => {
 const updateCharContainer = () => {
     charList.innerHTML = "";
     charData.forEach(
-      ({ id, name, roll}) => {
+      ({ id, name, roll, damage}) => {
           (charList.innerHTML += `
           <div class="char" id="${id}">
             <p><strong>Name:</strong> ${name}</p>
@@ -84,13 +85,30 @@ const updateCharContainer = () => {
             <button class="status-btn" onclick="select(this)" type="button">Add Status</button>
             <div class="status-list"></div>
             </div>
-            <input class="damage-input" type="number" id="damage-${id}">
+            <input class="damage-input" type="number" id="damage-${id}" value="${damage}" onchange="saveDamage(this)" onblur="saveDamage(this)">
             <button class="btn" onclick="deleteChar(this)" type="button" class="btn">Delete</button> 
           </div>
         `)
+
       }
     );
   };
+
+  const isNumeric = (string) => /^[+-]?\d+(\.\d+)?$/.test(string)
+
+
+  const saveDamage  = (damEl) => {
+    const charEl = damEl.parentElement;
+    const dataArrIndex = charData.findIndex(
+        (char) => char.id === charEl.id
+    );
+    const damage = damEl.value;
+    if(isNumeric(damage)){
+        charData[dataArrIndex].damage = damEl.value;
+        localStorage.setItem("data", JSON.stringify(charData));
+        update();
+    }
+}
 
 
 const deleteChar = (buttonEl) => {
@@ -152,6 +170,8 @@ inputForm.addEventListener("submit", (e) => {
     e.preventDefault();
     addOrUpdateCharList();
 });
+
+
 
 clearBtn.addEventListener("click", () => {
     localStorage.clear();

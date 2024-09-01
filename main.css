@@ -45,7 +45,8 @@ form {
     font-size: xx-large;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 5%;
+    row-gap: 0.2em;
+    column-gap: 5%;
 }
 
 label {
@@ -62,6 +63,11 @@ label {
     border-radius: 1rem;
 }
 
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
 .damage-input {
     height: 8%;
     background-color: black;
@@ -70,7 +76,7 @@ label {
     border-radius: 1 rem;
     font-size: larger;
     margin: auto;
-    width: 15vh;
+    width: 7ch;
 }
 
 
@@ -83,7 +89,8 @@ label {
     height: 10%;
     gap: 3%;
     max-height: 10%;
-    width: fit-content;
+    width: 30rem;
+    margin: auto;
 }
 
 .btn, .status {
@@ -167,22 +174,20 @@ label {
     flex-direction: row;
     flex-grow: 0;
     flex-shrink: 0;
-    gap: 5vh;
+    gap: 5%;
     border-style: solid;
     border-color: white;
     background-color: black;
     font-size: x-large;
     margin-top: 2%;
-    width: 100%;
     padding: 1%;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .char > button {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
-    margin-right: auto;
 }
 
 .char > p{

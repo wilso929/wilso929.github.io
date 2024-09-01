@@ -13,7 +13,8 @@
     <main>
 		<form id="input-form">
             <label for="name">Name: <input class="input" required ="text" id="name" name="name"></label>
-            <label for="roll">Roll: <input class="input" required type="number" id="roll" name="roll"></label>
+            <label for="roll">Roll: <input class="input" required pattern="^\d*(\.\d{0,2})?$" id="roll" name="roll"></label>
+			<div class="break"></div>
             <input class="btn" type="submit" id="add-char" value="Add Char">
         </form>
 		<div id="copy-container">
