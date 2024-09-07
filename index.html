@@ -26,6 +26,22 @@
 		</div>
 		<div id="char-container">
 			<h2>Characters</h2>
+			<form id="concentration-form" class="hidden-form">
+				<h4>Enter the spell you're concentrating on</h4>
+				<div class="break"></div>
+				<label for="spell">Spell: <input class="input" required ="text" id="spell" name="spell"></label>
+				<div class="break"></div>
+				<input class="btn" type="submit" id="submit-spell" value="Submit">
+				<input class="btn" type="button" id="close-spell" value="Close">
+			</form>
+			<form id="custom-form" class="hidden-form">
+				<h4>Enter your custom status</h4>
+				<div class="break"></div>
+				<label for="status">Status: <input class="input" required ="text" id="custom-status" name="status"></label>
+				<div class="break"></div>
+				<input class="btn" type="submit" id="submit-custom" value="Submit">
+				<input class="btn" type="button" id="close-custom" value="Close">
+			</form>
 			<button class="btn" type="button" id="clear-btn">Clear List</button>
 			<div id="char-list"></div>
 		</div>

@@ -68,6 +68,27 @@ label {
     height: 0;
 }
 
+
+.hidden-form{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    border-color: #f5f6f7;
+    border-style: groove;
+    border-radius: 1rem;
+    width: fit-content;
+    background-color: #0a0a23;
+    padding: 1%;
+}
+
+.hidden-form > label{
+    width: 70%;
+    padding-bottom: 1%;
+}
+
 .damage-input {
     height: 8%;
     background-color: black;
@@ -75,7 +96,9 @@ label {
     font-size: small;
     border-radius: 1 rem;
     font-size: larger;
-    margin: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     width: 7ch;
 }
 
@@ -90,7 +113,7 @@ label {
     gap: 3%;
     max-height: 10%;
     width: 30rem;
-    margin: auto;
+    margin-left: auto;
 }
 
 .btn, .status {
@@ -116,12 +139,13 @@ label {
     flex-shrink: 0;
     gap: 3%;
     font-size: small;
-    overflow-y:scroll;
     width: 40%;
+    background-color: gray;
+    height: fit-content;
 }
 
 .status-card {
-    background-color: navy;
+    background-color: black;
     border-color: white;
     border-style: solid;
     width: fit-content;
@@ -174,7 +198,7 @@ label {
     flex-direction: row;
     flex-grow: 0;
     flex-shrink: 0;
-    gap: 5%;
+    gap: 2%;
     border-style: solid;
     border-color: white;
     background-color: black;
