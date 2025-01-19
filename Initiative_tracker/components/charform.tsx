@@ -8,11 +8,8 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
-  FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
@@ -38,7 +35,8 @@ export default function CharForm({
     },
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit(data: {name: string, roll: string} ) {
+    console.log(data);
     addChar(data.name, parseFloat(data.roll));
     form.reset();
   }
@@ -54,7 +52,8 @@ export default function CharForm({
           <FormItem className="">
             <FormControl>
               <Input className="text-black" 
-                placeholder="Name" {...field}
+                placeholder="Name"
+                {...field} 
               />
             </FormControl>
           </FormItem>
@@ -67,8 +66,9 @@ export default function CharForm({
           <FormItem className="">
             <FormControl>
               <Input className="text-black" 
-                placeholder="Roll" {...field} 
+                placeholder="Roll" 
                 pattern="^\d*(\.\d{0,2})?$"
+                {...field} 
               />
             </FormControl>
           </FormItem>

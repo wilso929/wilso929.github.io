@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export interface Char {
-  id: number;
+  id: string;
   name: string;
   roll: number;
   conditions: string[][];

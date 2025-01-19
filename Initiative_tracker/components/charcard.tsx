@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Char } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge"
 
 import {
     Select,
@@ -21,7 +20,6 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-import { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
 
 export default function CharCard({
     char,
@@ -31,10 +29,10 @@ export default function CharCard({
     deleteCharConditions
 }: {
     char: Char,
-    updateCharDamage: (editingCharId: number | null, editedCharDamage: number | null) => void,
-    addCharConditions: (editingCharId: number | null, editedCharCond: string) => void, 
-    deleteCharConditions: (editingCharId: number | null, editedCharCond: string) => void, 
-    deleteChar: (id: number) => void
+    updateCharDamage: (editingCharId: string | null, editedCharDamage: number | null) => void,
+    addCharConditions: (editingCharId: string | null, editedCharCond: string) => void, 
+    deleteCharConditions: (editingCharId: string | null, editedCharCond: string) => void, 
+    deleteChar: (id: string) => void
 }) {
 
     function updateDamage(e: React.ChangeEvent<HTMLInputElement>){
@@ -206,7 +204,7 @@ export default function CharCard({
                             < TooltipProvider key={c[0]}>
                                 <Tooltip>
                                     <TooltipTrigger className="bg-red-500 p-1 overflow-clip rounded-lg col-span-1" 
-                                        onClick={(value) => deleteCharConditions(char.id, c[0])}
+                                        onClick={() => deleteCharConditions(char.id, c[0])}
                                     >
                                         {c[0]}
                                     </TooltipTrigger>
@@ -227,7 +225,7 @@ export default function CharCard({
             <Input className="text-black col-span-1 2xl:col-start-8" 
                 type="number" 
                 onChange={(e) => updateDamage(e)} 
-                defaultValue={char.damage}
+                defaultValue={char.damage ? char.damage : 0}
             />
             <Button className="m-2 col-span-1 2xl:col-start-9" 
                 variant="destructive" 

@@ -1,15 +1,12 @@
 'use client';
-
-import React, { Dispatch, ReactNode, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction} from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
   FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+  FormItem
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -72,37 +69,4 @@ export default function ConditionForm({
       </Form>
     </div>
   )
-
-  // return (
-  //   <Form {...form}>
-  //     <form
-  //       onSubmit={form.handleSubmit(onSubmit)}
-  //       className="gird gird-col-12 m-3 gap-2"
-  //     >
-  //       <div className="col-span-2">
-  //         <FormField
-  //           name="name"
-  //           control={form.control}
-  //           render={({ field }: { field: any }) => (
-  //             <FormItem>
-  //               <FormControl>
-  //                 <Input
-  //                   {...field}
-  //                   placeholder=""
-  //                   className="text-md text-black"
-  //                   required
-  //                   autoFocus
-  //                 />
-  //               </FormControl>
-  //               <FormMessage />
-  //             </FormItem>
-  //           )}
-  //         />
-  //       </div>
-  //       <div className="col-span-1">
-  //         <Button type="submit" className="w-full sm:w-auto">Submit</Button>
-  //       </div>
-  //     </form>
-  //   </Form>
-  // );
 }

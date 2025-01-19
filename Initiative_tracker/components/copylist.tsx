@@ -1,6 +1,7 @@
+'use client';
 import { Button } from "@/components/ui/button"
 import { Char } from "@/lib/utils";
-import { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
+import { useState, useEffect } from "react";
 
 export default function CopyList({
     chars
