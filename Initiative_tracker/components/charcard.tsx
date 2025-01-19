@@ -48,7 +48,7 @@ export default function CharCard({
             <div className="col-span-1">
                 <Select 
                     value={""} 
-                    onValueChange={(value) => addCharConditions(char.id, value)}
+                    onValueChange={(value: string) => addCharConditions(char.id, value)}
                 >
                     <SelectTrigger className="text-black">
                         <SelectValue placeholder="Conditions"/>
